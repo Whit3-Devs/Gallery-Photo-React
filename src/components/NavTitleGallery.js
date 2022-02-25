@@ -7,6 +7,11 @@ import {
   Nav,
   NavItem,
   NavLink,
+  UncontrolledDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  NavbarText
 } from "reactstrap";
 
 export const NavTitleGallery = () => {
@@ -15,14 +20,11 @@ export const NavTitleGallery = () => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div className="p-4">
-      <Navbar color="fadded" light>
-        <NavbarBrand href="/" className="mr-auto">
-          Gallery Photo
-        </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+      <Navbar color="light" expand="md" light>
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={function noRefCheck() {}} />
+        <Collapse navbar>
+          <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink href="/components/">Components</NavLink>
             </NavItem>
@@ -31,9 +33,20 @@ export const NavTitleGallery = () => {
                 GitHub
               </NavLink>
             </NavItem>
+            <UncontrolledDropdown inNavbar nav>
+              <DropdownToggle caret nav>
+                Options
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem>Option 2</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Reset</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
           </Nav>
+          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
-    </div>
   );
 };
