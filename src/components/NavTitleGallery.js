@@ -1,52 +1,35 @@
 import React, { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  NavbarText
-} from "reactstrap";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import logo from "../assets/logo/logoab2.png"
+
+const styles = {
+  "width": "50px",
+  "heigth": "45px"
+}
 
 export const NavTitleGallery = () => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
-
   return (
-      <Navbar color="light" expand="md" light>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={function noRefCheck() {}} />
-        <Collapse navbar>
-          <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown inNavbar nav>
-              <DropdownToggle caret nav>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
-      </Navbar>
+    <nav
+      class="navbar fixed-top navbar-dark bg-dark"
+      style={{ height: "80px" }}
+    >
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand ms-2">
+          <img src={logo} alt="augusto blanco logo" style={styles} />
+        </a>
+        <ul className="navbar-nav d-flex flex-row justify-content-around" style={{"width": "15%"}}>
+          <li className="navitem">
+            <a href="https://github.com/Whit3-Devs">
+              <AiFillGithub color="white" size="2.5rem"/>
+            </a>
+          </li>
+          <li className="navitem">
+            <a href="">
+              <AiFillLinkedin color="white" size="2.5rem"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
