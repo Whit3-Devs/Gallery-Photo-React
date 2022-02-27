@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import logo from "../assets/logo/logoab2.png"
 
@@ -24,7 +24,7 @@ export const NavTitleGallery = () => {
             </a>
           </li>
           <li className="navitem">
-            <a href="">
+            <a href="https://www.linkedin.com/in/blanco-augusto-r/">
               <AiFillLinkedin color="white" size="2.5rem"/>
             </a>
           </li>
